@@ -35,10 +35,54 @@ main {
   border: none;
   outline: none;
   appearance: none;
-  margin: 0 0 10rem;
+  margin: 0 0 2rem;
   box-shadow: 0px 1px 15px rgba(0 , 0 , 0 , 0.2);
   font-size: 17px;
   transition: 0.4s ease;
+}
+
+.location-box {
+  text-align: center;
+}
+
+.location-box .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50 , 50 , 70 , 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  text-shadow: 2px 2px rgba(50 , 50 , 70 , 0.5);
+}
+
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  color: #fff;
+  font-size: 80px;
+  font-weight: 800;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-shadow: 3px 3px rgba(50 , 50 , 70 , 0.5);
+}
+
+.weather-box .weather {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 600;
+  text-shadow: 3px 3px rgba(50 , 50 , 70 , 0.5);
 }
 
 /* Screens larger than tabs */
