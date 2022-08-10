@@ -9,23 +9,25 @@ body {
 }
 
 .App {
-  background-image: url('./Assests/cold-bg.jpg');
+  background: linear-gradient(180deg, rgba(0,153,255,1) 0%, rgba(51,51,255,1) 41%, rgba(51,51,204,1) 100%);
   background-position: center;
   background-size: cover;
   transition: 0.4s ease-out;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .App.warm {
-  background-image: url('./Assests/warm-bg.jpg');
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 
 main {
-  min-height: 100vh;
+  height: 100vh;
   padding: 2rem;
-  background-image: linear-gradient(to bottom , rgba(0 , 0 , 0 , 0.1), rgba(0 , 0 , 0, 0.85));
 }
 
 .search-bar{
@@ -36,7 +38,7 @@ main {
   border-radius: 10px;
   outline: none;
   appearance: none;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   box-shadow: 0px 1px 15px rgba(0 , 0 , 0 , 0.2);
   font-size: 17px;
   transition: 0.4s ease;
@@ -69,7 +71,7 @@ main {
 .weather-box .temp {
   position: relative;
   display: inline-block;
-  margin: 30px auto;
+  margin: 25px auto;
   color: #fff;
   font-size: 80px;
   font-weight: 800;
@@ -84,6 +86,39 @@ main {
   font-size: 48px;
   font-weight: 600;
   text-shadow: 3px 3px rgba(50 , 50 , 70 , 0.5);
+}
+
+.ERROR {
+  margin-top: 5rem;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
+}
+
+.otherDetails {
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.otherDetails .humidity {
+  border-right: 3px solid white;
+  width: 50%;
+}
+
+.otherDetails .seaLevel {
+  width: 50%;
+}
+
+.otherDetails h1 {
+  font-size: 15px;
 }
 
 /* Screens larger than tabs */
@@ -101,4 +136,10 @@ main {
   .location-box .location {
     font-size: 50px;
   }
+
+  .otherDetails {
+    width: 50%;
+    margin: 3rem auto;
+  }
+
 }

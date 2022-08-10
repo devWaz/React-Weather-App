@@ -9,17 +9,15 @@ const api = {
 function Main(){
     const [query , setQuery] = useState('');
     const [weather , setWeather] = useState({});
-
-
     
     const search = evt => {
         if (evt.key === "Enter") {
             fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setWeather(data);
                 setQuery('');
+                console.log(data);
             });
         }
     }
@@ -28,7 +26,6 @@ function Main(){
         let months = ["January" , "Februaury" , "March" , "April" , "May" , "June" , "July" , "August" , "September" ,
                         "October" , "November" , "December"];
         let days = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
-    
     
         let day = days[d.getDay()];
         let date = d.getDate();
@@ -39,39 +36,51 @@ function Main(){
     }
 
     return (
-        <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? "App warm" : "App") : "App"}>
+
+        <div className={ (typeof weather.main != "undefined") ? 
+        ((weather.main.temp > 16) ? 
+        "App warm" : 
+        "App") 
+            : "App"
+        }>
             <main>
             <div className='search'>
             <input 
                 type="text"
                 className="search-bar"
-                placeholder="Search Country"
+                placeholder="Search City, Country"
                 onChange={e => setQuery(e.target.value)}
                 value={query}
-                onKeyPress={search}
-            />
+                onKeyPress={search}/>
             </div>
 
             {(typeof weather.main != "undefined") ? (
-            <div>
-            <div className="location-box">
-                <div className="location">{weather.name} , {weather.sys.country}</div>
-                <div className="date">{dateBuilder(new Date())}</div>
-            </div>
+            <div className="container">
+                <div className="location-box">
+                    <div className="location">{weather.name} , {weather.sys.country}</div>
+                    <div className="date">{dateBuilder(new Date())}</div>
+                </div>
+
             <div className="weather-box">
                 <div className="temp">
-                    {Math.round(weather.main.temp)}*C
-                </div>
-                <div className="weather">{weather.weather[0].main}</div>
+                    {Math.round(weather.main.temp)}°C
+                    <div className="weather">{weather.weather[0].main}</div>
+                </div> 
+            </div>
+
+            <div className="otherDetails">
+                <div className="humidity"><h1>Humidity: {weather.main.humidity} Ha</h1></div>
+                <div className="seaLevel"><h1>Sea Level: {weather.main.sea_level}</h1></div>
             </div>
             </div>
             ) : (
-                <div>
-                    <h1>Your Search Result Couldn't be Found</h1>
+                <div className="ERROR">
+                    <h1>Your Search Result Couldn't be Found! Try a new search</h1>
                 </div>
             )}
         </main>
-      </div>
+        </div>
+
     )
 }
 
