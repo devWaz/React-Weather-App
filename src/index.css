@@ -96,12 +96,13 @@ main {
 }
 
 .otherDetails {
-  width: 100%;
-  position: relative;
+  width: 90%;
+  position: absolute;
+  bottom: 1rem;
+  right: 1.2rem;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 1rem;
-  margin-top: 2rem;
   color: #fff;
   display: flex;
   justify-content: space-around;
@@ -123,9 +124,6 @@ main {
 
 /* Screens larger than tabs */
 @media (min-width: 768px) {
-  .App {
-  background-size: contain;
-  }
 
   .search-bar {
     width: 60%;
@@ -140,6 +138,16 @@ main {
   .otherDetails {
     width: 50%;
     margin: 3rem auto;
+    bottom: 0;
+    left: 3rem;
   }
 
+  .weather img {
+    width: 60px;
+  }
+
+  .weather {
+    display: flex;
+    justify-content: center;
+  }
 }

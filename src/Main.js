@@ -5,6 +5,7 @@ const api = {
     base: "https://api.openweathermap.org/data/2.5/"
   }
 
+const link = {image: "https://openweathermap.org/img/wn/"}
 
 function Main(){
     const [query , setQuery] = useState('');
@@ -64,7 +65,10 @@ function Main(){
             <div className="weather-box">
                 <div className="temp">
                     {Math.round(weather.main.temp)}°C
-                    <div className="weather">{weather.weather[0].main}</div>
+                    <div className="weather">
+                        {weather.weather[0].main}
+                        <img src={`${link.image}${weather.weather[0].icon}.png`} alt="" />
+                        </div>
                 </div> 
             </div>
 
@@ -75,7 +79,7 @@ function Main(){
             </div>
             ) : (
                 <div className="ERROR">
-                    <h1>Your Search Result Couldn't be Found! Try a new search</h1>
+                    <h1>Your search result couldn't be found! Try a new search</h1>
                 </div>
             )}
         </main>
