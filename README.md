@@ -1,4 +1,4 @@
-# React-Weather-App
+# WAZ THE WEATHER?
 A simple weather app built with react which consumes the OpenWeatherMap API that displays weather stats of a place based on location.
 
 ## Live Code
